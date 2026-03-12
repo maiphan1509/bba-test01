@@ -1,0 +1,11 @@
+let count: number = 0;
+
+for (let i = 1; i <= 100; i++) {
+    for (let j = i+1; j <= 100; j++) {
+        if ((i + j)%17 === 0) {
+            console.log(`Pair found: (${i}, ${j}) = ${i + j}`);
+            count++;
+        }
+    }
+}
+console.log(`Total pairs found: ${count}`);
