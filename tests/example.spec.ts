@@ -4,11 +4,11 @@ test('has title', async ({ page }) => {
   await page.goto('https://e-commerce-dev.betterbytesvn.com/');
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/E-Commerce site for automation testing/);
+  await expect(page).toHaveTitle(/E-commerce site for automation testing/);
 });
 
 test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('https://e-commerce-dev.betterbytesvn.com/');
 
   // Click the get started link.
   await page.getByRole('link', { name: 'My account' }).click();
