@@ -7,7 +7,7 @@ interface Character {
   heath: number;
 }
 
-const createCharacter = (chars: Character[]) => {
+const character = (chars: Character[]) => {
   const characterPowerUp = chars.map((char) => {
     return {
       name: char.name.toUpperCase(),
@@ -28,7 +28,7 @@ const chars: Character[] = [
   { name: "Hien", level: 1000, heath: 550 },
 ];
 
-const characters = createCharacter(chars);
+const characters = character(chars);
 console.log(characters);
 
 //Bài 2 ------------------------------------------------------------------
@@ -42,21 +42,17 @@ interface Player {
 const printLeaderboard = (players: Player[]) => {
   const sortedPlayers = players.sort((a, b) => b.core - a.core);
 
-  const rank = sortedPlayers.map((player, index) => {
-    const defaultRank = `${index + 1}. ${player.name} - ${player.core} pts`;
-    switch (index) {
-      case 0:
-        return `🥇 ${defaultRank}`;
-      case 1:
-        return `🥈 ${defaultRank}`;
-      case 2:
-        return `🥉 ${defaultRank}`;
-      default:
-        return `   ${defaultRank}`;
+  for (let i = 0; i < sortedPlayers.length; i++) {
+    if (i === 0) {
+      console.log(`🥇 ${i + 1}. ${sortedPlayers[i].name} - ${sortedPlayers[i].core} pts`);
+    } else if (i === 1) {
+      console.log(`🥈 ${i + 1}. ${sortedPlayers[i].name} - ${sortedPlayers[i].core} pts`);
+    } else if (i === 2) {
+      console.log(`🥉 ${i + 1}. ${sortedPlayers[i].name} - ${sortedPlayers[i].core} pts`);
+    } else {
+      console.log(`   ${i + 1}. ${sortedPlayers[i].name} - ${sortedPlayers[i].core} pts`);
     }
-  });
-
-  console.log(rank);
+  }
 };
 
 const players: Player[] = [
