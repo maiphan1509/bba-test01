@@ -1,14 +1,14 @@
-let powerUp : string = "Mushroom";
+let powerUp : string = "mushroom";
 let effect : string;
 
-if (powerUp === "Mushroom") {
+if (powerUp === "mushroom") {
     effect = "Mario becomes Super!";
-}else if (powerUp === "Flower") {
+}else if (powerUp === "flower") {
     effect = "Mario can shoot fireballs!";
-}else if (powerUp === "Star") {
+}else if (powerUp === "star") {
     effect = "Mario is invincible!";
-}else if (powerUp === "None") {
-    effect = "Mario is normal.";
+}else if (powerUp === "none") {
+    effect = "Mario is normal";
 }else {
     effect = "Unknown power-up!";
 }
